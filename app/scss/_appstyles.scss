@@ -1,0 +1,351 @@
+/* all app scss styles here */
+
+$dark-blue: #3F4348;
+$light-blue: #F1F6FB;
+
+// ANIMATION SPEEDS
+$easeOutExpo   : cubic-bezier(0.190, 1.000, 0.220, 1.000);
+$easeInExpo    : cubic-bezier(0.950, 0.050, 0.795, 0.035);
+$easeInOutExpo : cubic-bezier(1.000, 0.000, 0.000, 1.000);
+
+.full.row{
+	max-width: rem-calc(1800);
+}
+
+body,
+html{
+	min-height: 100%;
+}
+
+.button{
+  transition: all .3s $easeOutExpo;
+
+  &:hover{
+    transform: scale(1.1);
+  }
+}
+
+section.hero{
+	background: url(../images/bg.jpg) no-repeat center center fixed;
+	background-size: cover;
+	height: 100%;
+  text-align: center;
+
+	svg{
+		width: 100%;
+		margin: 0 auto;
+		display: block;
+    position: relative;
+    z-index: 9;
+
+    path{
+      fill: $light-blue;
+    }
+	}
+
+	#hero__logo{
+		width: 250px;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin-top: -125px;
+		margin-left: -125px;
+    text-align: center;
+    z-index: 10;
+
+    &.animation{
+      -webkit-animation-name: showLogo;
+      -webkit-animation-iteration-count: 1;
+      -webkit-animation-duration: 1s;
+    }
+
+    img{
+      margin-top: rem-calc(5);
+    }
+	}
+}
+
+@-webkit-keyframes showLogo {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  100%{
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+header{
+	background-color: $dark-blue;
+	text-align: center;
+	padding: 1em;
+  height: 120px;
+  position: absolute;
+  width: 100%;
+  z-index: 9;
+
+  &.stick{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    svg{
+      display: inline-block;
+    }
+  }
+
+	svg{
+		width: 80px;
+    display: none;
+
+		path{
+			fill: $light-blue;
+		}	
+	} 
+}
+
+
+
+section.about,
+section.contact{
+	padding: rem-calc(150) 0;
+}
+
+input[type="text"],
+input[type="email"],
+textarea{
+	border-bottom: 2px solid $jet;
+}
+
+.contact textarea{
+	height: rem-calc(222);
+}
+
+section.work{
+	a, a > img{
+	position: relative;
+	}
+
+	.expander{
+		position: absolute;
+		background: $light-blue;
+		top: auto;
+		left: 0; 
+		width: 100%;
+		margin-top: 10px;
+		text-align: left;
+		height: 0;
+		overflow: hidden;
+
+		.inner{
+			padding: 50px 30px;
+			height: 100%;
+		}
+	}
+}
+
+section.company{
+	padding: rem-calc(50) 0;
+	background: url(../images/map.png) no-repeat center center;
+	background-size: cover;
+	box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+
+	.info{
+		background-color: #fff;
+		padding: 3em;
+		max-width: rem-calc(500);
+		float: right;
+		margin-right: rem-calc(50);
+		p{
+			margin: 0;
+		}
+	}
+}
+
+footer{
+	padding: 1rem 0;
+	background-color: $dark-blue;
+	color: lighten($dark-blue, 10);
+
+	p{
+		margin: 0;
+	}
+}
+
+
+
+
+
+ul.grid{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+  li{
+    display: inline-block;
+    vertical-align: top;
+    transition: height 850ms $easeOutExpo;
+
+    @media #{$small-only}{
+    	width: 50%;
+    }
+
+    @media #{$medium-only}{
+    	width: 33.33%;
+    }
+
+    @media #{$large-only}{
+    	width: 25%;
+    }
+
+    @media #{$xlarge-only}{
+    	width: 20%;
+    }
+
+    @media #{$xxlarge-only}{
+    	width: 16.6%;
+    }
+
+    > a,
+    > a img{
+      border: none;
+      outline: none;
+      display: block;
+      position: relative;
+    }
+
+    > a{
+      transform: scale(0.9);
+      opacity: 0;
+      transition: all .3s $easeOutExpo;
+
+      &.imageLoaded{
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    > a img{
+      width: 100%;
+      height: 100%;
+    }
+
+    &.expanded > a:after{
+      top: auto;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-bottom-color: #ddd;
+      border-width: 15px;
+      left: 50%;
+      margin: -30px 0 0 -15px;
+    }
+
+    .expander{
+      position: absolute;
+      background: #ddd;
+      top: auto;
+      left: 0;
+      width: 100%;
+      text-align: left;
+      height: 0;
+      overflow: hidden;
+
+      transition: height 850ms $easeOutExpo;
+
+      .inner{
+        height: 100%;
+
+        .fullimg,
+        .details{
+          width: 50%;
+          float: left;
+          height: 100%;
+          overflow: hidden;
+          position: relative;
+        }
+
+        .details{ padding: 0 40px 0 20px; }
+      }
+
+      .close{
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+
+        &:before,
+        &:after{
+          content: '';
+          position: absolute;
+          width: 100%;
+          top: 50%;
+          height: 1px;
+          background: #888;
+          transform: rotate(45deg);
+        }
+
+        &:after{ transform: rotate(-45deg) }
+      }
+    }
+  }
+}
+
+.inner{
+  .left{
+    float: left;
+    width: 20%;
+    height: 100%;
+    padding: 50px 30px;
+  }
+
+  .right{
+    float: left;
+    width: 80%;
+    height: 100%;
+    padding: 40px 30px;
+    overflow-x: scroll;
+    white-space: nowrap;
+
+    a, img {
+      height: 100%;
+    }
+  }
+
+
+  img{
+    display: inline-block;
+    margin-right: 2em;
+  }
+}
+
+
+
+@media #{$small-only}{
+  header{
+    height: rem-calc(50);
+    padding: rem-calc(5);
+
+    svg{
+      height: rem-calc(40);
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+

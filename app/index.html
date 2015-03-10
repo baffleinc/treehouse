@@ -1,0 +1,110 @@
+<!doctype html>
+<html class="no-js" lang="en" ng-app="treehouse">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundation project</title>
+    <!-- build:css css/libraries.min.css -->
+    <link rel="stylesheet" href="bower_components/angular-hamburger-helper/ng-hamburger-helper.css"/>
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css css/app.min.css -->
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/app_override.css">
+    <!-- endbuild -->
+    <!-- build:js js/vendor/modernizr.min.js -->
+    <script src="bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+  </head>
+  <body ng-controller="MainController">
+    <span id="logo-trigger"></span>
+    <section class="hero" id="hero">
+        <div id="hero__logo" class="animation" logo>
+            <svg id="logo__svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" viewBox="0 0 51 51" version="1.1"><g sketch:type="MSPage"><g sketch:type="MSLayerGroup"><path d="M22.0000693 21.4 C21.9880693 23.3 23.5 24.9 25.5 24.9 C27.3860693 24.9 29 23.4 29 21.5 C28.9800693 19.6 27.4 18 25.5 18 C23.5800693 18 22 19.5 22 21.4" sketch:type="MSShapeGroup"/><path d="M37.471 30.1 L35.344 27.6 L28.855 41.3 L26.942 41.3 L28.234 35 C28.252 32.6 27.5 30.7 25.1 30.6 C22.673 30.6 21.9 32.6 21.9 35 L23.12 41.2 L20.91 41.2 L14.91 27.5 L12.749 30 L10.007 27.6 L25.261 9 L40.245 27.8 L37.471 30.1 Z M25.125 0 C11.248 0 0 11.2 0 25.1 C0 39 11.2 50.2 25.1 50.2 C39.001 50.2 50.2 39 50.2 25.1 C50.25 11.2 39 0 25.1 0 L25.125 0 Z" sketch:type="MSShapeGroup"/></g></g></svg>
+
+            <img src="images/treehouse.png" id="treehouse" alt="">
+            <img src="images/studios.png" width="100px" id="studios" alt="">
+        </div>
+
+        <span class="mouse">
+            <span class="scroll-wheel"></span>
+        </span>
+    </section>
+
+    <header sticky-header>
+        <svg id="header__logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" viewBox="0 0 51 51" version="1.1"><g sketch:type="MSPage"><g sketch:type="MSLayerGroup"><path d="M22.0000693 21.4 C21.9880693 23.3 23.5 24.9 25.5 24.9 C27.3860693 24.9 29 23.4 29 21.5 C28.9800693 19.6 27.4 18 25.5 18 C23.5800693 18 22 19.5 22 21.4" sketch:type="MSShapeGroup"/><path d="M37.471 30.1 L35.344 27.6 L28.855 41.3 L26.942 41.3 L28.234 35 C28.252 32.6 27.5 30.7 25.1 30.6 C22.673 30.6 21.9 32.6 21.9 35 L23.12 41.2 L20.91 41.2 L14.91 27.5 L12.749 30 L10.007 27.6 L25.261 9 L40.245 27.8 L37.471 30.1 Z M25.125 0 C11.248 0 0 11.2 0 25.1 C0 39 11.2 50.2 25.1 50.2 C39.001 50.2 50.2 39 50.2 25.1 C50.25 11.2 39 0 25.1 0 L25.125 0 Z" sketch:type="MSShapeGroup"/></g></g></svg>
+        <!-- <ng-hamburger-helper></ng-hamburger-helper> -->
+    </header>
+
+    <nav class="menu">
+        
+    </nav>
+
+    <section class="about">
+        <div class="row">
+            <div class="small-12 columns text-center">
+                <h1>Who is Tree House?</h1>
+                <p>Located in Melbourne and Sydney, treehouse has produced and shot commercials, music videos, and digital content. We like to tell stories nicely. Our photographers are passionate artists who like to immerse the viewers with their work. We’re a fresh new approach among the market. We’ve worked with people like Honda, New Balance, Bic, Dymo, Cruiser, Asahi, Hassel, Lenovo, Lekker, Dell, Marley, Tho, Monash Uni to bring them an amazing finishing product.</p>
+                <a href="#contact" class="button">Let's work together</a>  
+            </div>
+        </div>
+    </section>
+
+    <preview-grid items="items"></preview-grid>
+
+    <section class="contact">
+        <form class="row" name="contact" ng-submit="contact.$valid" novalidate>
+            <div class="small-12 columns text-center">
+                <h2>Get in touch</h2>
+                <p>Wanna shoot the shit with us? Drop us a line and we'll get back to you shortly.</p>
+            </div>
+
+            <div class="small-12 medium-6 columns">
+                <p><textarea name="" placeholder="MESSAGE"></textarea></p>
+            </div>
+            <div class="small-12 medium-6 columns">
+                <p><input type="text" placeholder="NAME"></p>
+                <p><input type="text" placeholder="EMAIL"></p>
+                <p><button type="submit" class="expand">DROP THAT LINE</button></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="company">
+        <div class="full row">
+            <div class="small-12 medium-6 medium-offset-6 columns text-center info">
+                <logo>TREEHOUSE</logo>
+                <p><small>Melbourne</small> <br> 9 Cubitt St Cremorne</p>
+                <p>&bull;</p>
+                <p><small>Sydney</small> <br> 46 Langley St Darlinghurst</p>
+
+                <ul class="inline-list"><li>social</li></ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p class="text-center">
+            &copy; tree house 2015 &bull; Call us - 0419 148 079
+        </p>
+    </footer>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+    <!-- build:js js/vendor/libraries.min.js -->
+    <!-- bower:js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-hamburger-helper/ng-hamburger-helper.js"></script>
+    <script src="bower_components/angular-scroll/angular-scroll.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/ScrollMagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    
+    <!-- build:js js/app.min.js -->
+    <script src="bower_components/ScrollMagic/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
+    <script src="js/preview-grid.js"></script>
+    <script src="js/app.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>
