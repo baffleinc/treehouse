@@ -6408,7 +6408,10 @@ body, html {
 .button {
   transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1); }
   .button:hover {
-    transform: scale(1.1); }
+    transform: scale(1.1);
+    background-color: #3F4348;
+    border-color: #3F4348;
+    color: #fff; }
 
 section.hero {
   background: url(../images/bg.jpg) no-repeat center center fixed;
@@ -6538,7 +6541,7 @@ ul.grid {
     @media only screen and (min-width:120.063em) and (max-width:99999999em) {
       ul.grid li {
         width: 16.6%; } }
-    ul.grid li > a, ul.grid li > a img {
+    ul.grid li > a, ul.grid li > a > img {
       border: none;
       outline: none;
       display: block;

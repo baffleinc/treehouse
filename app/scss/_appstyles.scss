@@ -22,6 +22,9 @@ html{
 
   &:hover{
     transform: scale(1.1);
+    background-color: $dark-blue;
+    border-color: $dark-blue;
+    color: #fff;
   }
 }
 
@@ -178,6 +181,12 @@ footer{
 
 
 
+
+
+
+
+
+
 ul.grid{
   list-style: none;
   margin: 0;
@@ -210,7 +219,7 @@ ul.grid{
     }
 
     > a,
-    > a img{
+    > a > img{
       border: none;
       outline: none;
       display: block;
