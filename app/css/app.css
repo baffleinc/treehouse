@@ -6757,6 +6757,9 @@ ul.grid {
   margin-right: 2em; }
 
 @media only screen and (max-width: 40em) {
+  #hero {
+    background-size: 100%; }
+
   header {
     height: 4.125rem;
     padding: 0.75rem;
@@ -6781,6 +6784,20 @@ ul.grid {
     margin: 0;
     background-color: rgba(255, 255, 255, 0.6);
     min-height: 600px; }
+
+  ul.grid .inner .left {
+    float: none !important;
+    width: 100%;
+    height: auto;
+    padding: 20px; }
+  ul.grid .inner .right {
+    float: none !important;
+    width: 100%;
+    height: auto;
+    padding: 0 0 10px 0;
+    -webkit-overflow-scrolling: touch; }
+    ul.grid .inner .right img {
+      margin-right: 0; }
  }
 
 @font-face {

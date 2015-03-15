@@ -509,6 +509,11 @@ ul.grid{
 
 
 @media #{$small-only}{
+
+  #hero{
+    background-size: 100%;
+  }
+
   header{
     height: rem-calc(66);
     padding: rem-calc(12);
@@ -543,6 +548,30 @@ ul.grid{
     margin: 0;
     background-color: rgba(255,255,255,0.6);
     min-height: 600px
+  }
+
+  ul.grid{
+    .inner{
+      .left{
+        float: none!important;
+        width: 100%;
+        height: auto;
+        padding: 20px;
+      }
+
+      .right{
+        float: none!important;
+        width: 100%;
+        height: auto;
+        padding: 0 0 10px 0;
+
+        -webkit-overflow-scrolling: touch;
+
+        img{
+          margin-right: 0;
+        }
+      }
+    }
   }
 }
 
