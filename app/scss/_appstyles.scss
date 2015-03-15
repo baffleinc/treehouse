@@ -1,12 +1,6 @@
 /* all app scss styles here */
 
-$dark-blue: #3F4348;
-$light-blue: #F1F6FB;
 
-// ANIMATION SPEEDS
-$easeOutExpo   : cubic-bezier(0.190, 1.000, 0.220, 1.000);
-$easeInExpo    : cubic-bezier(0.950, 0.050, 0.795, 0.035);
-$easeInOutExpo : cubic-bezier(1.000, 0.000, 0.000, 1.000);
 
 .full.row{
 	max-width: rem-calc(1800);
@@ -17,7 +11,8 @@ html{
 	min-height: 100%;
 }
 
-.button{
+.button,
+button{
   transition: all .3s $easeOutExpo;
 
   &:hover{
@@ -26,6 +21,40 @@ html{
     border-color: $dark-blue;
     color: #fff;
   }
+}
+
+#mouse{
+  display: block;
+  width: rem-calc(20);
+  height: rem-calc(35);
+
+  border-radius: rem-calc(10);
+  border: 1px solid $white;
+
+  position: absolute;
+  bottom: rem-calc(30);
+  left: 50%;
+  margin-left: rem-calc(-10);
+
+  .scroll-wheel{
+    display: block;
+    width: 4px;
+    height: 10px;
+    border-radius: 2px;
+
+    background-color: #fff;
+    position: absolute;
+    left: 7px;
+    top: rem-calc(5);
+
+    -webkit-animation: hoverWheel 2s infinite ease;
+  }
+}
+
+@-webkit-keyframes hoverWheel{
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(8px); }
+  100% { transform: translateY(0); }
 }
 
 section.hero{
@@ -71,7 +100,7 @@ section.hero{
 @-webkit-keyframes showLogo {
   0% {
     opacity: 0;
-    transform: scale(0.5);
+    transform: scale(0.7);
   }
 
   100%{
@@ -94,6 +123,10 @@ header{
     top: 0;
     left: 0;
 
+    .hamburger-helper{
+      opacity: 1;
+    }
+
     svg{
       display: inline-block;
     }
@@ -107,6 +140,83 @@ header{
 			fill: $light-blue;
 		}	
 	} 
+
+  .hamburger-helper{
+    opacity: 0;
+    transition: all .3s $easeOutExpo;
+    position: absolute;
+    right: rem-calc(50);
+    top: rem-calc(38);
+
+    span, span:before, span:after{ background-color: $light-blue; }
+  }
+}
+
+nav{
+  top: 120px;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+
+  width: rem-calc(320);
+  position: fixed;
+  background-color: darken($dark-blue, 10);
+
+  transition: all .3s $easeInOutExpo;
+  transform: translateX(rem-calc(320));
+
+  .menu__logo{
+    padding-top: 0;
+    opacity: 0;
+
+    width: rem-calc(100);
+    margin: 0 auto;
+
+    transition: all .5s $easeOutExpo;
+    transition-delay: .3s;
+
+    svg path { fill: $white; }
+  }
+
+  &.open{
+    transform: translateX(0);
+
+    .menu__logo{
+      padding-top: 2rem;
+      opacity: 1;
+    }
+
+    li{
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  ul{
+    margin-top: 2rem;
+    li{
+      text-align: center;
+      opacity: 0;
+      transform: translateY(-32px);
+      transition: all .3s $easeOutExpo;
+      
+      &:nth-child(1){ transition-delay: .6s }
+      &:nth-child(2){ transition-delay: .65s }
+      &:nth-child(3){ transition-delay: .7s }
+
+      a{
+        display: block;
+        color: $light-blue;
+        font-size: rem-calc(52);
+        transition: all .3s $easeOutExpo;
+
+        &:hover{
+          color: $light-blue;
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
 }
 
 
@@ -114,6 +224,10 @@ header{
 section.about,
 section.contact{
 	padding: rem-calc(150) 0;
+}
+
+section.about{
+  margin-top: rem-calc(120);
 }
 
 input[type="text"],
@@ -124,6 +238,13 @@ textarea{
 
 .contact textarea{
 	height: rem-calc(222);
+}
+
+.contact{
+  .attempted{
+    .ng-invalid{ border-bottom-color: #F85074 }
+    .ng-valid  { border-bottom-color: #A6CE38 }
+  }
 }
 
 section.work{
@@ -150,24 +271,69 @@ section.work{
 }
 
 section.company{
-	padding: rem-calc(50) 0;
-	background: url(../images/map.png) no-repeat center center;
-	background-size: cover;
+	padding: 0;
 	box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  position: relative;
+
+  .full.row{
+    position: absolute;
+    top: 0;
+  }
+
+  min-height: rem-calc(300);
+
+  .angular-google-map-container { 
+    height: 600px; 
+  }
 
 	.info{
+    // position: absolute;
+    z-index: 9;
 		background-color: #fff;
 		padding: 3em;
-		max-width: rem-calc(500);
+    max-width: rem-calc(500);
+    max-height: rem-calc(500);
 		float: right;
-		margin-right: rem-calc(50);
-		p{
-			margin: 0;
-		}
+		margin: rem-calc(50);
+
+		p, h4, h5{margin: 0;}
+
+    h4{ font-size: rem-calc(32); line-height: 1.2 }
+    h5{ font-size: rem-calc(32); line-height: 1.2 }
+
+    img{
+      max-width: rem-calc(150);
+      margin-bottom: 1em;
+    }
+
+    ul{
+      margin: 0;
+      li{
+        list-style: none;
+        display: inline-block;
+
+        a{
+          display: block;
+          padding: 1rem;
+        }
+      }
+    }
+
+    .switch-city{
+      cursor: pointer;
+
+      * { transition: color .3s }
+
+      &:hover *{
+        color: $bright-blue;
+      }
+    }
 	}
 }
 
 footer{
+  position: relative;
+  z-index: 99;
 	padding: 1rem 0;
 	background-color: $dark-blue;
 	color: lighten($dark-blue, 10);
@@ -340,12 +506,39 @@ ul.grid{
 
 @media #{$small-only}{
   header{
-    height: rem-calc(50);
-    padding: rem-calc(5);
+    height: rem-calc(66);
+    padding: rem-calc(12);
+
+    z-index: 99;
 
     svg{
       height: rem-calc(40);
+      display: inline-block;
     }
+
+    .hamburger-helper{
+      opacity: 1;
+      top: rem-calc(12);
+      right: rem-calc(20);
+    }
+  }
+
+  nav{
+    top: rem-calc(66);
+  }
+
+  .about{
+    padding: 0 2rem!important;
+  }
+
+  h1{
+    font-size: rem-calc(72);
+  }
+
+  section.company .info{
+    margin: 0;
+    background-color: rgba(255,255,255,0.6);
+    min-height: 600px
   }
 }
 

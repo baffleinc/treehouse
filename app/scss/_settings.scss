@@ -48,6 +48,15 @@
 // 34. Top Bar
 // 36. Visibility Classes
 
+$bright-blue: #78AFDE;
+$dark-blue: #3F4348;
+$light-blue: #F1F6FB;
+
+// ANIMATION SPEEDS
+$easeOutExpo   : cubic-bezier(0.190, 1.000, 0.220, 1.000);
+$easeInExpo    : cubic-bezier(0.950, 0.050, 0.795, 0.035);
+$easeInOutExpo : cubic-bezier(1.000, 0.000, 0.000, 1.000);
+
 // a. Base
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -116,8 +125,8 @@ $jet         : #222222;
 $black       : #000000;
 
 // We use these as default colors throughout
-// $primary-color: #008CBA;
-// $secondary-color: #e7e7e7;
+$primary-color: $bright-blue;
+$secondary-color: $light-blue;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
 // $warning-color: #f08a24;
@@ -125,7 +134,7 @@ $black       : #000000;
 
 // We use these to control various global styles
 // $body-bg: $white;
-// $body-font-color: $jet;
+$body-font-color: $dark-blue;
 // $body-font-family: $font-family-sans-serif;
 // $body-font-weight: $font-weight-normal;
 // $body-font-style: normal;
@@ -140,7 +149,7 @@ $black       : #000000;
 // $last-child-float: $opposite-direction;
 
 // We use these to make sure border radius matches unless we want it different.
-// $global-radius: 3px;
+$global-radius: 4px;
 // $global-rounded: 1000px;
 
 // We use these to control inset shadow shiny edges and depressions.
@@ -626,12 +635,12 @@ $button-border-color: $jet;
 // $input-font-color: rgba(0,0,0,0.75);
 $input-font-size: rem-calc(36);
 // $input-bg-color: $white;
-// $input-focus-bg-color: scale-color($white, $lightness: -2%);
+$input-focus-bg-color: $light-blue;
 // $input-border-color: scale-color($white, $lightness: -20%);
 // $input-focus-border-color: scale-color($white, $lightness: -40%);
 // $input-border-style: solid;
 $input-border-width: 0px;
-// $input-border-radius: $global-radius;
+$input-border-radius: $global-radius;
 // $input-disabled-bg: $gainsboro;
 // $input-disabled-cursor: $cursor-default-value;
 $input-box-shadow: none;
