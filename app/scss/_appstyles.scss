@@ -511,7 +511,9 @@ ul.grid{
 @media #{$small-only}{
 
   #hero{
+    background-image: url(../images/bg-mobile.jpg);
     background-size: 100%;
+    background-position: static;
   }
 
   header{
