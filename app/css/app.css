@@ -6643,9 +6643,11 @@ footer {
   z-index: 99;
   padding: 1rem 0;
   background-color: #3F4348;
-  color: #575c63; }
+  color: #6f767e; }
   footer p {
     margin: 0; }
+    footer p a {
+      color: #6f767e; }
 
 ul.grid {
   list-style: none;
@@ -6763,7 +6765,6 @@ ul.grid {
       height: 2.5rem;
       display: inline-block; }
     header .hamburger-helper {
-      opacity: 1;
       top: 0.75rem;
       right: 1.25rem; }
 

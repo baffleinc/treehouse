@@ -336,10 +336,14 @@ footer{
   z-index: 99;
 	padding: 1rem 0;
 	background-color: $dark-blue;
-	color: lighten($dark-blue, 10);
+	color: lighten($dark-blue, 20);
 
 	p{
 		margin: 0;
+
+    a{
+      color: lighten($dark-blue, 20);
+    }
 	}
 }
 
@@ -517,7 +521,7 @@ ul.grid{
     }
 
     .hamburger-helper{
-      opacity: 1;
+      // opacity: 1;
       top: rem-calc(12);
       right: rem-calc(20);
     }

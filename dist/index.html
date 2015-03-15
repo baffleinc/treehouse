@@ -66,12 +66,12 @@
 			</div>
 
 			<div class="small-12 medium-6 columns">
-				<p><textarea name="contact.message" ng-model="c.message" placeholder="MESSAGE" required></textarea></p>
+				<p><textarea name="contact.message" ng-model="c.message" placeholder="MESSAGE" ng-disabled="c.disabled" required></textarea></p>
 			</div>
 			<div class="small-12 medium-6 columns">
-				<p><input type="text" name="contact.name" ng-model="c.name" placeholder="NAME" required></p>
-				<p><input type="email" name="contact.email" ng-model="c.email" placeholder="EMAIL" ng-pattern="/@/" required></p>
-				<p><button type="submit" class="expand" ng-bind-html="c.buttonText | trust"></button></p>
+				<p><input type="text" name="contact.name" ng-model="c.name" placeholder="NAME" ng-disabled="c.disabled" required></p>
+				<p><input type="email" name="contact.email" ng-model="c.email" placeholder="EMAIL" ng-disabled="c.disabled" ng-pattern="/@/" required></p>
+				<p><button type="submit" class="expand" ng-bind-html="c.buttonText | trust" ng-disabled="c.disabled"></button></p>
 			</div>
 		</form>
 	</section>
@@ -110,7 +110,7 @@
 
 	<footer>
 		<p class="text-center">
-			&copy; tree house 2015 &bull; Call us - 0419 148 079
+			&copy; tree house 2015 &bull; Call us - <a href="tel:0419 148 079">0419 148 079</a>
 		</p>
 	</footer>
 
