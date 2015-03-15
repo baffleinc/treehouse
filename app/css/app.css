@@ -6768,12 +6768,10 @@ ul.grid {
       padding-top: 6.25rem; }
 
   #hero {
-    background-image: none;
-    background-size: 100% 100%;
-    background-position: static; }
+    background: none; }
 
   #mob-hero {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     min-width: 100%;
