@@ -6757,10 +6757,27 @@ ul.grid {
   margin-right: 2em; }
 
 @media only screen and (max-width: 40em) {
+  section.about, section.work, section.contact {
+    background-color: #fff;
+    position: relative;
+    z-index: 2; }
+
+  section.about {
+    margin-top: 0; }
+    section.about h1 {
+      padding-top: 6.25rem; }
+
   #hero {
-    background-image: url(../images/bg-mobile.jpg);
+    background-image: none;
     background-size: 100% 100%;
     background-position: static; }
+
+  #mob-hero {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%; }
 
   header {
     height: 4.125rem;

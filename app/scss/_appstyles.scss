@@ -510,10 +510,33 @@ ul.grid{
 
 @media #{$small-only}{
 
+  section.about,
+  section.work,
+  section.contact{
+    background-color: #fff;
+    position: relative;
+    z-index: 2;
+  }
+
+  section.about{
+    margin-top: 0;
+    h1{
+      padding-top: rem-calc(100);
+    }
+  }
+
   #hero{
-    background-image: url(../images/bg-mobile.jpg);
+    background-image: none;
     background-size: 100% 100%;
     background-position: static;
+  }
+
+  #mob-hero{
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
   }
 
   header{
